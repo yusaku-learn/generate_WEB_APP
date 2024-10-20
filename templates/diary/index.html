@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Stickman</title>
+    {% load static %}
+    <!-- 正しいスタイルシートへのパス -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="speech-bubble" id="speechBubble">
+            <!-- 最初のメッセージ -->
+        </div>
+        
+        <!-- 棒人間の描画 -->
+        <div class="stickman">
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="left-arm"></div>
+            <div class="right-arm"></div>
+            <div class="left-leg"></div>
+            <div class="right-leg"></div>
+        </div>
+
+        <!-- フォーム（最初は非表示） -->
+        <br>
+        <form method="POST" id="inputForm" style="display: none;">
+            {% csrf_token %}
+            <div>
+                <label for="name">名前</label>
+                <input type="text" id="name" name="name" value="{{ name }}">
+              </div>
+              <div>
+                <label for="email">メールアドレス</label>
+                <input type="mail" id="email" name="email" value="{{ email }}">
+              </div>
+              <div>
+                <label for="message">内容</label>
+                <textarea id="message" name="message">{{ message }}</textarea>
+              </div>
+              <input type="submit" value="送信する">
+        </form>
+    </div>
+
+    <!-- JavaScriptの読み込み -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+
+

@@ -1,1 +1,2 @@
-# generate_WEB_APP
+# GenerationAI_WEBAPP
+これは、Djangoで構築された生成AIを用いたWEBアプリケーションです。
